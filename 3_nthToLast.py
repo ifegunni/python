@@ -48,6 +48,30 @@ class LinkedList:
         if cur is None:
             return
 
+# O(n-2) solution
+
+def nthToLast2(self, index):
+    """Using 2 pointers p and q with q at index distance from q.
+    traverse through linkedList and moving p and q along the list until q is none.
+    Then return p
+    """"
+        p = self.head.next
+        q = self.head.next
+
+        count = 0
+        while q and count < index:
+            print(q.data)
+            q = q.next
+            count += 1
+
+        if not q:
+            print(str(n),"is greater that the number of Nodes")
+
+        while p and q:
+            p = p.next
+            q = q.next
+        return p.data
+
 
 
 
